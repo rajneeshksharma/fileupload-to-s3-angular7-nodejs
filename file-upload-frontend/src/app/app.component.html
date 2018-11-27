@@ -1,0 +1,55 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+
+
+<div class="row ">
+
+  <div class="col-md-12 " style="    padding-left: 393px;
+    padding-right: 408px;">
+    <div class="div1">
+<p> <strong>image get save in locally as well as s3</strong> </p>
+    <form [formGroup]="imageUploadForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <input type="text" class="form-control" name="name" formControlName="name" placeholder="Enter name" />
+      <br>
+      <div class="row">
+        <div class="col-md-8">
+          <input type="file" class="form-control" name="image" (change)="filechange($event)" formControlName="image" />
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-success" type="submit">Image upload</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+<p></p>
+<div class="row">
+
+  <div class="col-md-12" style="padding-left: 393px;
+    padding-right: 408px;">
+     <div class="div1">
+<p><strong> image get save in s3 only</strong></p>
+    <form [formGroup]="imageUploadForm2" (ngSubmit)="onSubmit2()" enctype="multipart/form-data">
+      <input type="text" class="form-control" name="name" formControlName="name2" placeholder="Enter name" />
+      <br>
+      <div class="row">
+        <div class="col-md-8">
+          <input type="file" class="form-control" name="image" (change)="filechange2($event)" formControlName="image2" />
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-success" type="submit">Image upload s3 only</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+<router-outlet></router-outlet>
